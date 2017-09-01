@@ -2,8 +2,22 @@
 
 class Car
 
+  attr_accessor :make, :model
+  ALL = []
 
+  def initialize(make, model)
+    @make = make
+    @model = model
+    ALL << self
+  end
 
+  def drive
+    "VROOOOOOOOOOOOM!"
+  end
+
+  def self.all
+    ALL
+  end
 end
 
 car = Car.new("volvo", "lightening")
@@ -26,3 +40,9 @@ car.make
 #=> "volvo"
 car.model
 #=> "ligthening"
+
+def initialize(make_model)
+   @make = make_model[:make]
+   @model = make_model[:model]
+   ALL << self
+end
